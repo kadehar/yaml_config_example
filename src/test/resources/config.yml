@@ -1,0 +1,7 @@
+credentials:
+  login: test
+  password: test
+endpoint:
+  url: https://github.com/
+repository:
+  url: https://github.com/kadehar/yaml_config_example
