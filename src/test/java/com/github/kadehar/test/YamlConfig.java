@@ -1,5 +1,7 @@
 package com.github.kadehar.test;
 
+import com.github.kadehar.config.Base;
+import com.github.kadehar.config.BaseHelper;
 import com.github.kadehar.config.model.Credentials;
 import com.github.kadehar.config.model.Endpoint;
 import com.github.kadehar.config.model.Repository;
@@ -52,5 +54,12 @@ public class YamlConfig {
         String expectedEndpoint = "https://github.com/kadehar/yaml_config_example";
         step("Assert that url equals " + expectedEndpoint,
                 () -> assertEquals(expectedEndpoint, repository.getUrl()));
+    }
+
+    @Test
+    public void readBaseConfig() {
+        Base base = BaseHelper.yaml().readConfig();
+        assertEquals(base.link.url, "");
+        assertEquals(base.time.base, 0);
     }
 }
